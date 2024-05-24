@@ -8,7 +8,8 @@ export const connectToServer = (token: string) => {
 
     // http://localhost:3000/socket.io/socket.io.js
 
-    const manager = new Manager('http://localhost:3000/socket.io/socket.io.js', {
+    // donde esta el http linea 12 cuando ya tenga el backend desplegado tengo que poner la url ahi asi estan conectados 
+    const manager = new Manager(`${process.env.API_URL}/socket.io/socket.io.js`, {
         extraHeaders: {
             hola: 'holiss',
             authentication: token
